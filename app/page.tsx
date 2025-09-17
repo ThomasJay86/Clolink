@@ -362,7 +362,7 @@ export default function Home() {
             </Button>
             <Button
               variant="outline"
-              className="border-white text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full"
+              className="border-white text-white hover:bg-white/10 text-lg px-8 py-6 rounded-full bg-transparent"
             >
               See Demo
             </Button>
