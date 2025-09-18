@@ -133,22 +133,32 @@ export default function Templates() {
           </div>
 
           <div
-            className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}
+            className={`grid gap-8 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}
           >
             {filteredTemplates
               .filter((t) => t.featured)
               .map((template) => (
                 <div key={template.id} className="group relative">
-                  {/* Template Card */}
-                  <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-100 hover:-translate-y-1">
-                    {/* Template Preview - Optimized Size */}
-                    <div className="relative aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-                      <div className="w-full h-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-                        <TemplateVisual template={template} className="w-full h-full" />
+                  {/* Template Card with iPhone 16 Pro dimensions */}
+                  <div className="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-200 hover:-translate-y-2">
+                    {/* iPhone 16 Pro Preview Container - 393x852px scaled down */}
+                    <div className="relative mx-auto" style={{ width: "196px", height: "426px" }}>
+                      {/* iPhone Frame */}
+                      <div className="absolute inset-0 bg-black rounded-[2.5rem] p-2">
+                        {/* Screen */}
+                        <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                          {/* Dynamic Island */}
+                          <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
+
+                          {/* Template Content */}
+                          <div className="w-full h-full pt-8">
+                            <TemplateVisual template={template} className="w-full h-full" />
+                          </div>
+                        </div>
                       </div>
 
                       {/* Badges */}
-                      <div className="absolute top-6 right-6 flex flex-col gap-2">
+                      <div className="absolute -top-2 -right-2 flex flex-col gap-2 z-20">
                         {template.isPro && (
                           <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white border-0 px-3 py-1 text-xs font-semibold shadow-lg">
                             PRO
@@ -162,20 +172,20 @@ export default function Templates() {
                       </div>
 
                       {/* Hover Overlay */}
-                      <div className="absolute inset-4 bg-black/60 backdrop-blur-sm rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                        <div className="flex gap-3">
+                      <div className="absolute inset-2 bg-black/70 backdrop-blur-sm rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-30">
+                        <div className="flex flex-col gap-3">
                           <Button
                             size="sm"
                             variant="secondary"
                             onClick={() => handlePreview(template)}
-                            className="bg-white/90 hover:bg-white text-gray-900 shadow-lg"
+                            className="bg-white/95 hover:bg-white text-gray-900 shadow-lg px-6"
                           >
                             Preview
                           </Button>
                           <Button
                             size="sm"
                             onClick={() => handleUseTemplate(template)}
-                            className={`shadow-lg ${
+                            className={`shadow-lg px-6 ${
                               template.isPro
                                 ? "bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600"
                                 : "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
@@ -188,7 +198,7 @@ export default function Templates() {
                     </div>
 
                     {/* Template Info */}
-                    <div className="p-5">
+                    <div className="p-6">
                       <div className="flex items-center gap-2 mb-3">
                         <div className="flex text-yellow-400 text-sm">
                           {[...Array(5)].map((_, i) => (
@@ -208,7 +218,7 @@ export default function Templates() {
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                          <span className="text-xs text-gray-500 font-medium">Ready to use</span>
+                          <span className="text-xs text-gray-500 font-medium">Mobile optimized</span>
                         </div>
                         <Badge variant="secondary" className="text-xs">
                           {template.category}
@@ -251,19 +261,30 @@ export default function Templates() {
             {categories.map((category) => (
               <TabsContent key={category.id} value={category.id} className="mt-8">
                 <div
-                  className={`grid gap-6 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}
+                  className={`grid gap-8 ${viewMode === "grid" ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4" : "grid-cols-1"}`}
                 >
                   {filteredTemplates
                     .filter((t) => category.id === "all" || t.category === category.id)
                     .map((template) => (
                       <div key={template.id} className="group relative">
-                        <div className="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-xl hover:shadow-purple-100 hover:-translate-y-1">
-                          <div className="relative aspect-[3/4] bg-gradient-to-br from-gray-50 to-gray-100 p-4">
-                            <div className="w-full h-full bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200">
-                              <TemplateVisual template={template} className="w-full h-full" />
+                        <div className="bg-white rounded-3xl shadow-lg border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-purple-200 hover:-translate-y-2">
+                          {/* iPhone 16 Pro Preview Container */}
+                          <div className="relative mx-auto" style={{ width: "196px", height: "426px" }}>
+                            {/* iPhone Frame */}
+                            <div className="absolute inset-0 bg-black rounded-[2.5rem] p-2">
+                              {/* Screen */}
+                              <div className="w-full h-full bg-white rounded-[2rem] overflow-hidden relative">
+                                {/* Dynamic Island */}
+                                <div className="absolute top-2 left-1/2 transform -translate-x-1/2 w-24 h-6 bg-black rounded-full z-10"></div>
+
+                                {/* Template Content */}
+                                <div className="w-full h-full pt-8">
+                                  <TemplateVisual template={template} className="w-full h-full" />
+                                </div>
+                              </div>
                             </div>
 
-                            <div className="absolute top-6 right-6 flex flex-col gap-2">
+                            <div className="absolute -top-2 -right-2 flex flex-col gap-2 z-20">
                               {template.isPro && (
                                 <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white border-0 px-3 py-1 text-xs font-semibold shadow-lg">
                                   PRO
@@ -276,20 +297,20 @@ export default function Templates() {
                               )}
                             </div>
 
-                            <div className="absolute inset-4 bg-black/60 backdrop-blur-sm rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center">
-                              <div className="flex gap-3">
+                            <div className="absolute inset-2 bg-black/70 backdrop-blur-sm rounded-[2rem] opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-center justify-center z-30">
+                              <div className="flex flex-col gap-3">
                                 <Button
                                   size="sm"
                                   variant="secondary"
                                   onClick={() => handlePreview(template)}
-                                  className="bg-white/90 hover:bg-white text-gray-900 shadow-lg"
+                                  className="bg-white/95 hover:bg-white text-gray-900 shadow-lg px-6"
                                 >
                                   Preview
                                 </Button>
                                 <Button
                                   size="sm"
                                   onClick={() => handleUseTemplate(template)}
-                                  className={`shadow-lg ${
+                                  className={`shadow-lg px-6 ${
                                     template.isPro
                                       ? "bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-amber-600 hover:to-yellow-600"
                                       : "bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700"
@@ -301,7 +322,7 @@ export default function Templates() {
                             </div>
                           </div>
 
-                          <div className="p-5">
+                          <div className="p-6">
                             <div className="flex items-center gap-2 mb-3">
                               <div className="flex text-yellow-400 text-sm">
                                 {[...Array(5)].map((_, i) => (
@@ -321,7 +342,7 @@ export default function Templates() {
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-2">
                                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                                <span className="text-xs text-gray-500 font-medium">Ready to use</span>
+                                <span className="text-xs text-gray-500 font-medium">Mobile optimized</span>
                               </div>
                               <Badge variant="secondary" className="text-xs">
                                 {template.category}
@@ -397,17 +418,26 @@ export default function Templates() {
                 .map((template, idx) => (
                   <div
                     key={template.id}
-                    className={`relative aspect-[3/4] bg-white rounded-2xl shadow-lg overflow-hidden border border-amber-200 ${
+                    className={`relative bg-white rounded-3xl shadow-lg overflow-hidden border border-amber-200 ${
                       idx % 2 === 0 ? "mt-8" : "mb-8"
                     }`}
+                    style={{ width: "148px", height: "320px" }}
                   >
-                    <div className="absolute inset-0 p-3">
-                      <div className="w-full h-full bg-white rounded-xl shadow-md overflow-hidden border border-gray-200">
-                        <TemplateVisual template={template} className="w-full h-full" />
+                    {/* Mini iPhone Frame */}
+                    <div className="absolute inset-0 bg-black rounded-3xl p-1.5">
+                      <div className="w-full h-full bg-white rounded-[1.25rem] overflow-hidden relative">
+                        {/* Mini Dynamic Island */}
+                        <div className="absolute top-1 left-1/2 transform -translate-x-1/2 w-16 h-4 bg-black rounded-full z-10"></div>
+
+                        {/* Template Content */}
+                        <div className="w-full h-full pt-6">
+                          <TemplateVisual template={template} className="w-full h-full" />
+                        </div>
                       </div>
                     </div>
-                    <div className="absolute top-5 right-5">
-                      <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white border-0 px-3 py-1 text-xs font-semibold shadow-lg">
+
+                    <div className="absolute -top-2 -right-2 z-20">
+                      <Badge className="bg-gradient-to-r from-amber-500 to-yellow-500 text-white border-0 px-2 py-1 text-xs font-semibold shadow-lg">
                         PRO
                       </Badge>
                     </div>
