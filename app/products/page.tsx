@@ -1,6 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Check } from "lucide-react"
+import { Check, Smartphone, BarChart3, Globe, Zap, Shield, MousePointer2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import SharedLayout from "@/components/shared-layout"
@@ -8,315 +10,290 @@ import SharedLayout from "@/components/shared-layout"
 export default function Products() {
   return (
     <SharedLayout>
-      {/* Hero Section */}
-      <div className="bg-gradient-to-r from-green-800 to-green-900 text-white py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-            Powerful tools for restaurant owners
-          </h1>
-          <p className="mt-6 text-xl text-green-100 max-w-3xl mx-auto">
-            Everything you need to create, manage, and grow your restaurant's digital presence
-          </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-green-900 hover:bg-gray-100 text-lg px-8 py-3 rounded-full">
-              Get Started for Free
-            </Button>
-            <Link href="/products/menu-demo">
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 text-lg px-8 py-3 rounded-full"
-              >
-                View Demo
-              </Button>
-            </Link>
-          </div>
+      {/* Advanced Hero Section */}
+      <div className="relative bg-gray-950 text-white overflow-hidden">
+        {/* Abstract Background */}
+        <div className="absolute inset-0 z-0">
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-500/20 rounded-full blur-[128px] animate-pulse" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-500/10 rounded-full blur-[128px] animate-pulse delay-1000" />
+          <div className="absolute inset-0 bg-[url('/noise.png')] opacity-[0.03] mix-blend-overlay" />
         </div>
-      </div>
 
-      {/* Main Content */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        {/* Core Products */}
-        <section className="mb-24">
-          <div className="text-center mb-16">
-            <Badge className="bg-green-100 text-green-800 mb-4">CORE PRODUCTS</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">Everything you need in one place</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Our suite of tools helps you create a beautiful digital menu, manage orders, and connect with customers
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Digital Menu */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-green-50 to-green-100 flex items-center justify-center">
-                <Image src="/placeholder.svg?height=120&width=120" alt="Digital Menu" width={120} height={120} />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 pt-32 pb-24">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-sm font-medium mb-8 backdrop-blur-sm">
+                <Zap className="w-4 h-4" />
+                <span>New: AI Menu Optimization</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Digital Menu</h3>
-                <p className="text-gray-600 mb-4">
-                  Create a beautiful, mobile-friendly digital menu that's easy to update and share
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Unlimited menu items</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Custom categories</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>QR code generation</span>
-                  </li>
-                </ul>
+
+              <h1 className="text-5xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6 bg-gradient-to-br from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
+                The complete OS for <br />
+                <span className="text-green-500">modern restaurants</span>
+              </h1>
+
+              <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                Everything you need to digitize your menu, streamline operations, and grow your revenue—all in one
+                powerful platform.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <Button className="h-14 px-8 rounded-full bg-green-500 hover:bg-green-400 text-black font-semibold text-lg shadow-[0_0_20px_rgba(34,197,94,0.3)] hover:shadow-[0_0_30px_rgba(34,197,94,0.5)] transition-all duration-300">
+                  Start Free Trial
+                </Button>
                 <Link href="/products/menu-demo">
-                  <Button variant="outline" className="w-full rounded-full">
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  <Button
+                    variant="outline"
+                    className="h-14 px-8 rounded-full border-white/10 bg-white/5 hover:bg-white/10 text-white backdrop-blur-sm text-lg"
+                  >
+                    View Interactive Demo
                   </Button>
                 </Link>
               </div>
             </div>
 
-            {/* Online Ordering */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
-                <Image src="/placeholder.svg?height=120&width=120" alt="Online Ordering" width={120} height={120} />
+            {/* 3D Floating Elements */}
+            <div className="flex-1 relative w-full max-w-lg lg:max-w-none">
+              <div className="relative z-10 bg-gray-900/80 backdrop-blur-xl border border-white/10 rounded-3xl p-6 shadow-2xl transform rotate-y-12 hover:rotate-y-0 transition-transform duration-700 ease-out">
+                <div className="flex items-center justify-between mb-6 border-b border-white/5 pb-4">
+                  <div className="flex items-center gap-3">
+                    <div className="w-3 h-3 rounded-full bg-red-500" />
+                    <div className="w-3 h-3 rounded-full bg-yellow-500" />
+                    <div className="w-3 h-3 rounded-full bg-green-500" />
+                  </div>
+                  <div className="text-xs text-gray-500 font-mono">dashboard.foodtree.com</div>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <div className="w-1/3 h-32 bg-white/5 rounded-xl animate-pulse" />
+                    <div className="w-1/3 h-32 bg-white/5 rounded-xl animate-pulse delay-100" />
+                    <div className="w-1/3 h-32 bg-white/5 rounded-xl animate-pulse delay-200" />
+                  </div>
+                  <div className="h-48 bg-white/5 rounded-xl border border-white/5 p-4">
+                    <div className="flex items-end justify-between h-full gap-2">
+                      {[40, 70, 45, 90, 65, 85, 55].map((h, i) => (
+                        <div key={i} className="w-full bg-green-500/20 rounded-t-sm relative group">
+                          <div
+                            className="absolute bottom-0 left-0 right-0 bg-green-500 rounded-t-sm transition-all duration-1000"
+                            style={{ height: `${h}%` }}
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Online Ordering</h3>
-                <p className="text-gray-600 mb-4">
-                  Accept orders directly through your menu with our integrated ordering system
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Commission-free orders</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Customizable checkout</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Order notifications</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full rounded-full">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
 
-            {/* Analytics Dashboard */}
-            <div className="bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100">
-              <div className="h-48 bg-gradient-to-br from-purple-50 to-purple-100 flex items-center justify-center">
-                <Image src="/placeholder.svg?height=120&width=120" alt="Analytics Dashboard" width={120} height={120} />
+              {/* Floating Cards */}
+              <div className="absolute -top-12 -right-12 bg-gray-800/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-xl animate-bounce duration-[3000ms]">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-green-500/20 flex items-center justify-center text-green-400">
+                    <Smartphone className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">New Order</div>
+                    <div className="text-xs text-gray-400">Table 12 • $45.00</div>
+                  </div>
+                </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">Analytics Dashboard</h3>
-                <p className="text-gray-600 mb-4">
-                  Track performance and gain insights to optimize your menu and business
-                </p>
-                <ul className="space-y-2 mb-6">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Menu performance metrics</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Customer behavior insights</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Sales reports</span>
-                  </li>
-                </ul>
-                <Button variant="outline" className="w-full rounded-full">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
 
-        {/* Featured Product */}
-        <section className="mb-24">
-          <div className="bg-gradient-to-r from-green-50 to-emerald-50 rounded-2xl overflow-hidden">
-            <div className="grid md:grid-cols-2 gap-8 items-center">
-              <div className="p-8 md:p-12">
-                <Badge className="bg-green-100 text-green-800 mb-4">NEW</Badge>
-                <h2 className="text-3xl font-bold mb-4">AI Menu Optimization</h2>
-                <p className="text-lg text-gray-700 mb-6">
-                  Our AI-powered tool analyzes your menu performance and customer preferences to suggest optimizations
-                  that can increase your revenue.
-                </p>
-                <ul className="space-y-3 mb-8">
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Smart item placement recommendations</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Pricing optimization</span>
-                  </li>
-                  <li className="flex items-start">
-                    <Check className="h-5 w-5 text-green-500 mr-2 mt-0.5" />
-                    <span>Seasonal menu suggestions</span>
-                  </li>
-                </ul>
-                <Button className="bg-green-800 hover:bg-green-900 text-white rounded-full px-8 py-3">
-                  Try It Now
-                </Button>
-              </div>
-              <div className="md:h-full flex items-center justify-center p-8">
-                <div className="bg-white rounded-xl shadow-lg overflow-hidden max-w-md">
-                  <Image
-                    src="/placeholder.svg?height=400&width=300"
-                    alt="AI Menu Optimization"
-                    width={300}
-                    height={400}
-                    className="w-full"
-                  />
+              <div className="absolute -bottom-8 -left-8 bg-gray-800/90 backdrop-blur-md p-4 rounded-2xl border border-white/10 shadow-xl animate-bounce duration-[4000ms]">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                    <Globe className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <div className="text-sm font-medium text-white">Online Visitor</div>
+                    <div className="text-xs text-gray-400">Viewing Menu...</div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* Testimonials */}
-        <section className="mb-24">
+      {/* Bento Grid Features */}
+      <div className="bg-gray-50 py-24 px-6">
+        <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Trusted by restaurant owners worldwide</h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              See how our products have helped restaurants increase their revenue and streamline operations
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6 tracking-tight">
+              Everything you need in one place
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Replace your fragmented tech stack with one cohesive operating system designed for growth.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6">
-                "The digital menu and online ordering system have transformed our business. We've seen a 40% increase in
-                takeout orders since implementing FoodTree."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 mr-4">
-                  <Image src="/placeholder.svg?height=48&width=48" alt="Customer" width={48} height={48} />
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[minmax(200px,auto)]">
+            {/* Large Card */}
+            <div className="md:col-span-2 bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group overflow-hidden relative">
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-green-100 flex items-center justify-center text-green-600 mb-6 group-hover:scale-110 transition-transform">
+                  <Smartphone className="w-6 h-6" />
                 </div>
-                <div>
-                  <h4 className="font-bold">Carlos Mendez</h4>
-                  <p className="text-gray-600 text-sm">Taqueria El Sol</p>
-                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">Digital Menu & Ordering</h3>
+                <p className="text-gray-600 max-w-md">
+                  Create a stunning, mobile-first menu that lets customers order and pay directly from their phones. No
+                  app download required.
+                </p>
               </div>
+              <div className="absolute right-0 bottom-0 w-1/2 h-full bg-gradient-to-l from-green-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+              <Image
+                src="/placeholder.svg?height=400&width=400"
+                alt="Menu Preview"
+                width={400}
+                height={400}
+                className="absolute -right-10 -bottom-10 w-64 h-64 object-contain transform group-hover:scale-105 transition-transform duration-500"
+              />
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-gray-700 mb-6">
-                "The analytics dashboard gives us incredible insights into what menu items are performing well. We've
-                optimized our menu and increased our average order value by 15%."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 mr-4">
-                  <Image src="/placeholder.svg?height=48&width=48" alt="Customer" width={48} height={48} />
+            {/* Tall Card */}
+            <div className="md:row-span-2 bg-gray-900 rounded-3xl p-8 border border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 group relative overflow-hidden text-white">
+              <div className="relative z-10">
+                <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+                  <BarChart3 className="w-6 h-6" />
                 </div>
-                <div>
-                  <h4 className="font-bold">Emma Chen</h4>
-                  <p className="text-gray-600 text-sm">Lotus Garden</p>
+                <h3 className="text-2xl font-bold mb-3">Real-time Analytics</h3>
+                <p className="text-gray-400 mb-8">
+                  Track sales, popular items, and customer behavior as it happens. Make data-driven decisions to
+                  optimize your menu.
+                </p>
+                <div className="space-y-4">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="bg-white/5 rounded-xl p-4 border border-white/5">
+                      <div className="flex justify-between text-sm mb-2">
+                        <span className="text-gray-400">Revenue</span>
+                        <span className="text-green-400">+12%</span>
+                      </div>
+                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                        <div className="h-full bg-green-500 w-3/4" />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
+              <div className="absolute inset-0 bg-gradient-to-b from-transparent to-green-900/20 opacity-0 group-hover:opacity-100 transition-opacity" />
             </div>
 
-            <div className="bg-white p-8 rounded-xl shadow-sm">
-              <div className="flex text-yellow-400 mb-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg
-                    key={i}
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    className="w-5 h-5"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                ))}
+            {/* Medium Card */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-2xl bg-blue-100 flex items-center justify-center text-blue-600 mb-6 group-hover:scale-110 transition-transform">
+                <Globe className="w-6 h-6" />
               </div>
-              <p className="text-gray-700 mb-6">
-                "Setting up our digital menu was incredibly easy. The templates are beautiful and our customers love
-                being able to scan the QR code to view our menu directly on their phones. It's saved us time and money
-                on printing costs."
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full bg-gray-200 mr-4">
-                  <Image src="/placeholder.svg?height=48&width=48" alt="Customer" width={48} height={48} />
-                </div>
-                <div>
-                  <h4 className="font-bold">Michael Johnson</h4>
-                  <p className="text-gray-600 text-sm">Bistro 42</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Online Presence</h3>
+              <p className="text-gray-600">Automatically generated SEO-optimized website for your restaurant.</p>
+            </div>
+
+            {/* Medium Card */}
+            <div className="bg-white rounded-3xl p-8 border border-gray-200 shadow-sm hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 rounded-2xl bg-purple-100 flex items-center justify-center text-purple-600 mb-6 group-hover:scale-110 transition-transform">
+                <Shield className="w-6 h-6" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Secure Payments</h3>
+              <p className="text-gray-600">Integrated payment processing with fraud protection and instant payouts.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* AI Feature Section */}
+      <div className="bg-white py-24 px-6 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-[2.5rem] p-8 md:p-16 relative overflow-hidden text-white">
+            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-500/20 rounded-full blur-[100px] -mr-32 -mt-32" />
+
+            <div className="grid md:grid-cols-2 gap-12 items-center relative z-10">
+              <div>
+                <Badge className="bg-green-500/20 text-green-300 border-none mb-6 px-4 py-2">
+                  <Sparkles className="w-4 h-4 mr-2" />
+                  AI-POWERED
+                </Badge>
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+                  Your menu, <br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400">
+                    optimized by intelligence
+                  </span>
+                </h2>
+                <p className="text-lg text-gray-300 mb-8 leading-relaxed">
+                  Our AI analyzes thousands of data points to suggest the perfect pricing, item placement, and
+                  descriptions to maximize your revenue.
+                </p>
+                <ul className="space-y-4 mb-10">
+                  {[
+                    "Smart pricing recommendations",
+                    "Automated menu engineering",
+                    "Seasonal item suggestions",
+                    "Conversion rate optimization",
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded-full bg-green-500/20 flex items-center justify-center">
+                        <Check className="w-4 h-4 text-green-400" />
+                      </div>
+                      <span className="text-gray-200">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Button className="bg-white text-gray-900 hover:bg-gray-100 rounded-full px-8 py-6 text-lg font-semibold">
+                  Try AI Optimization
+                </Button>
+              </div>
+
+              <div className="relative">
+                <div className="bg-gray-800/50 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl">
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="text-sm font-medium text-gray-400">Optimization Score</div>
+                    <div className="text-2xl font-bold text-green-400">94/100</div>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/5 flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-green-500/20 flex items-center justify-center text-green-400">
+                        <MousePointer2 className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-white">Move "Truffle Fries" to top</div>
+                        <div className="text-xs text-green-400">+15% projected sales</div>
+                      </div>
+                    </div>
+                    <div className="bg-white/5 rounded-xl p-4 border border-white/5 flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-lg bg-blue-500/20 flex items-center justify-center text-blue-400">
+                        <BarChart3 className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <div className="text-sm font-medium text-white">Update "Burger" description</div>
+                        <div className="text-xs text-blue-400">Improve conversion</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
+      </div>
 
-        {/* CTA Section */}
-        <div className="bg-gradient-to-r from-green-800 to-green-900 text-white rounded-2xl p-12 text-center">
-          <h2 className="text-3xl font-bold mb-4">Ready to transform your restaurant's digital presence?</h2>
-          <p className="text-xl text-green-100 mb-8 max-w-3xl mx-auto">
-            Join thousands of restaurants already using FoodTree to grow their business
+      {/* CTA Section */}
+      <div className="bg-white pb-24 px-6">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">Ready to transform your restaurant?</h2>
+          <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">
+            Join thousands of forward-thinking restaurant owners who are growing their business with FoodTree.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button className="bg-white text-green-900 hover:bg-gray-100 text-lg px-8 py-3 rounded-full">
+            <Button className="h-14 px-8 rounded-full bg-gray-900 hover:bg-gray-800 text-white font-semibold text-lg shadow-lg hover:shadow-xl transition-all">
               Get Started for Free
             </Button>
-            <Link href="/products/menu-demo">
-              <Button
-                variant="outline"
-                className="border-white text-white hover:bg-white/10 text-lg px-8 py-3 rounded-full"
-              >
-                View Demo
-              </Button>
-            </Link>
+            <Button
+              variant="outline"
+              className="h-14 px-8 rounded-full border-gray-200 hover:bg-gray-50 text-gray-900 text-lg bg-transparent"
+            >
+              Contact Sales
+            </Button>
           </div>
         </div>
       </div>
     </SharedLayout>
   )
 }
+
+import { Sparkles } from "lucide-react"
