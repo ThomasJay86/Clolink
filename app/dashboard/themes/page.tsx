@@ -372,24 +372,30 @@ export default function ThemesPage() {
                     <Link href="/templates">
                       <Button
                         variant="outline"
-                        className="h-auto flex flex-col items-center justify-center p-4 gap-2 w-full"
+                        className="h-auto flex flex-col items-center justify-center p-4 gap-2 w-full bg-transparent"
                       >
                         <Eye className="h-6 w-6" />
                         <span className="text-sm">Browse Templates</span>
                       </Button>
                     </Link>
-                    <Button variant="outline" className="h-auto flex flex-col items-center justify-center p-4 gap-2">
+                    <Button
+                      variant="outline"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 bg-transparent"
+                    >
                       <Download className="h-6 w-6" />
                       <span className="text-sm">Export Theme</span>
                     </Button>
-                    <Button variant="outline" className="h-auto flex flex-col items-center justify-center p-4 gap-2">
+                    <Button
+                      variant="outline"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 bg-transparent"
+                    >
                       <Grid className="h-6 w-6" />
                       <span className="text-sm">Customize</span>
                     </Button>
                     <Link href="/dashboard/view-menu">
                       <Button
                         variant="outline"
-                        className="h-auto flex flex-col items-center justify-center p-4 gap-2 w-full"
+                        className="h-auto flex flex-col items-center justify-center p-4 gap-2 w-full bg-transparent"
                       >
                         <Eye className="h-6 w-6" />
                         <span className="text-sm">Preview Menu</span>

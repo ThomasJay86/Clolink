@@ -192,10 +192,12 @@ export default function Dashboard() {
                     View Menu
                   </Button>
                 </Link>
-                <Button size="sm">
-                  <Edit className="h-4 w-4 mr-2" />
-                  Edit Menu
-                </Button>
+                <Link href="/dashboard/menu">
+                  <Button size="sm">
+                    <Edit className="h-4 w-4 mr-2" />
+                    Edit Menu
+                  </Button>
+                </Link>
               </div>
             </div>
           </header>
@@ -379,7 +381,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/orders/new">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-green-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-green-50 bg-transparent"
                     >
                       <ShoppingBag className="h-6 w-6 text-green-600" />
                       <span className="text-xs">New Order</span>
@@ -388,7 +390,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/reservations/new">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-purple-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-purple-50 bg-transparent"
                     >
                       <Calendar className="h-6 w-6 text-purple-600" />
                       <span className="text-xs">Book Table</span>
@@ -397,7 +399,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/inventory">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-blue-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-blue-50 bg-transparent"
                     >
                       <Package className="h-6 w-6 text-blue-600" />
                       <span className="text-xs">Inventory</span>
@@ -406,7 +408,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/staff">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-orange-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-orange-50 bg-transparent"
                     >
                       <UserCheck className="h-6 w-6 text-orange-600" />
                       <span className="text-xs">Staff Clock</span>
@@ -415,7 +417,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/accounting">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-yellow-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-yellow-50 bg-transparent"
                     >
                       <DollarSign className="h-6 w-6 text-yellow-600" />
                       <span className="text-xs">Daily Sales</span>
@@ -424,7 +426,7 @@ export default function Dashboard() {
                   <Link href="/dashboard/themes">
                     <Button
                       variant="outline"
-                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-indigo-50"
+                      className="h-auto flex flex-col items-center justify-center p-4 gap-2 hover:bg-indigo-50 bg-transparent"
                     >
                       <Grid className="h-6 w-6 text-indigo-600" />
                       <span className="text-xs">Themes</span>
